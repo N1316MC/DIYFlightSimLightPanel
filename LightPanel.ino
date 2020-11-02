@@ -13,7 +13,7 @@
 Joystick_ Joystick;
 
 void setup() {
-  // Initialize Button Pins
+  // Initialize Button Pins.  Make sure to use the digital pin locations you are using
   pinMode(3, INPUT_PULLUP);
   pinMode(4, INPUT_PULLUP);
   pinMode(5, INPUT_PULLUP);
@@ -28,10 +28,10 @@ void setup() {
   Joystick.begin();
 }
 
-// Constant that maps the phyical pin to the joystick button.
+// Constant that maps the phyical pin to the joystick button.  This is the first pin you're connected to.
 const int pinToButtonMap = 3;
 
-// Last state of the button
+// Last state of the button.  Ensure the array size matches the number of pins you're using.
 int lastButtonState[9] = {0,0,0,0,0,0,0,0,0};
 
 void loop() {
